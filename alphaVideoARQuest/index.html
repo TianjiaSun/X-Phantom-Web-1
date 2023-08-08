@@ -1,57 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Video</title>
-    <meta name="description" content="Video - A-Frame">
-    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.6/dist/aframe-transparent-video-shader.umd.js"></script>
-    <script src="play-on-click.js"></script>
-    <script src="hide-on-play.js"></script>
-  </head>
-  <body>
-    <a-scene>
-      <a-assets>
-        <img id="videoBunny"
-               src="elephant.png"
-               width="320" height="180"
-               ></img>
-        <video id="videoFireworks" preload="auto"
-               src="https://cdn.aframe.io/videos/fireworks.mp4"
-               width="160" height="90" autoplay loop="true"
-               crossOrigin="anonymous" muted></video>
-      </a-assets>
+<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
 
-      <!--
-      SOURCE
-      Title:  Big Buck Bunny
-      Author: Blender Institute
-      URL:    https://peach.blender.org/
-      -->
-      <a-entity material="shader: transparent-video; src: #videoBunny"
-                geometry="primitive: plane; width: 320; height: 180;"
-                position="60 60 -250"
-                rotation="0 45 0"
-                play-on-click
-                visible="false">
-      </a-entity>
+<a-assets>
+  <img id="pngImage" src="elephant.png">
+</a-assets>
 
-      <!--
-      SOURCE
-      Title:  Fireworks
-      Author: Motion Digital
-      URL:    https://www.videvo.net/profile/motiondigital/
-      -->
-      <a-entity material="shader: flat; src: #videoFireworks"
-                geometry="primitive: plane; width: 160; height: 90"
-                position="60 -60 -60"
-                rotation="0 -45 0"
-                play-on-click
-                visible="false">
-      </a-entity>
-
-      <a-camera position="0 1.2 0"></a-camera>
-      </a-camera>
-    </a-scene>
-  </body>
-</html>
+<a-scene>
+  <a-image position = "0 1.5 -1" width="1" height="1" src="#pngImage"></a-image>
+  
+  <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+  <a-box position="-1 0.5 -3" rotation="0 45 0" width="1" height="1" depth="1" color="#4CC3D9"></a-box>
+  <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+  <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+  <a-sky color="#ECECEC"></a-sky>
+</a-scene>
